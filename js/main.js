@@ -102,20 +102,18 @@ for (sk of skill_box) {
         e.toElement.lastElementChild.classList.add("HTML");
         max = 86;
         console.log(aa);
+
         if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
+          setTimeout(() => counter(max), 100);
         }
 
         break;
       case "B":
         e.toElement.lastElementChild.classList.add("JS");
         max = 88;
+
         if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
+          setTimeout(() => counter(max), 100);
         }
 
         break;
@@ -123,10 +121,9 @@ for (sk of skill_box) {
         console.log(e.toElement.lastElementChild.classList);
         e.toElement.lastElementChild.classList.add("CSS");
         max = 66;
+
         if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
+          setTimeout(() => counter(max), 100);
         }
 
         break;
