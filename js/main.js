@@ -102,18 +102,20 @@ for (sk of skill_box) {
         e.toElement.lastElementChild.classList.add("HTML");
         max = 86;
         console.log(aa);
-
         if (aa === "0") {
-          setTimeout(() => counter(max), 100);
+          if (aa === "0") {
+            setTimeout(() => counter(max), 100);
+          }
         }
 
         break;
       case "B":
         e.toElement.lastElementChild.classList.add("JS");
         max = 88;
-
         if (aa === "0") {
-          setTimeout(() => counter(max), 100);
+          if (aa === "0") {
+            setTimeout(() => counter(max), 100);
+          }
         }
 
         break;
@@ -121,9 +123,10 @@ for (sk of skill_box) {
         console.log(e.toElement.lastElementChild.classList);
         e.toElement.lastElementChild.classList.add("CSS");
         max = 66;
-
         if (aa === "0") {
-          setTimeout(() => counter(max), 100);
+          if (aa === "0") {
+            setTimeout(() => counter(max), 100);
+          }
         }
 
         break;
@@ -213,10 +216,6 @@ for (sk of skill_box) {
 
 //스크롤 받기
 
-window.addEventListener("scroll", function () {
-  console.log(window.scrollY);
-});
-
 const $text = document.querySelector(".text");
 
 //타이핑
@@ -281,17 +280,23 @@ for (aa of info_button) {
   });
 }
 
-//높이값
-const title_top = document.querySelector("#title").offsetTop;
-const info_top = document.querySelector("#info").offsetTop;
-const skill_top = document.querySelector("#skill").offsetTop;
-const pj_top = document.querySelector("#pro").offsetTop;
-const sub_top = document.querySelector("#sub").offsetTop;
+//높이값 높이값을 받아오지못해서 마무리하지못했습니다!!!!!!!!!!!!!!!!!!!!!!!!!!!!높이값이 왜 20이나오는지 모르겠어요!!!
+const title_top = document.getElementById("title").offsetTop;
+const info_top = document.getElementById("info").getBoundingClientRect().top;
+const skill_top = document.getElementById("skill").offsetTop;
+const pj_top = document.getElementById("pro").offsetTop;
+const sub_top = document.getElementById("sub").offsetTop;
+const title_bt = document.querySelector(".start").getBoundingClientRect().top;
+console.log("값", title_bt);
+window.addEventListener("scroll", function () {
+  console.log(window.scrollY);
 
-switch (window.scrollY) {
-  case window.scrollY > info_top:
-    console.log("작동");
-}
+  if (window.scrollY > title_top && window.scrollY < title_bt) {
+  }
+});
+const topy = info_top.getBoundingClientRect;
+console.log(window.scrollY);
+
 //날짜
 function clock() {
   let today = new Date();
@@ -327,3 +332,5 @@ function clock() {
 }
 
 setInterval(clock, 1000);
+
+//슬라이드

@@ -126,7 +126,43 @@
     border-right: 2px solid #777;
   }
 }
+.dog_cover {
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 30px;
+}
 
+.dog_cover .text_box {
+  padding-top: 20px;
+  display: block;
+  width: 200px;
+  height: 80px;
+  background-color: #ffffcc;
+  border-radius: 8px;
+  border: 1px solid black;
+  position: relative;
+  font-size: 14px;
+}
+.dog_cover .text_box img {
+  width: 20%;
+  margin: 0;
+}
+
+.dog_cover .text_box::after {
+  content: "";
+  display: block;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #ffffcc;
+  position: absolute;
+  bottom: -15px;
+  left: 60px;
+}
+.dog_cover img {
+  width: 50%;
+  margin-left: 30px;
+  margin-top: 30px;
+}
 /*
 타이핑*/
 img {
@@ -166,35 +202,27 @@ img {
 }
 .m_info::before {
   color: black;
-  content: "□";
+  content: "○";
 }
 .plus .m_info::before {
-  color: green;
-  content: "■";
+  color: rgb(84, 172, 255);
+  content: "●";
 }
-
-.cover_top {
-  position: absolute;
-  border-bottom: 265px solid transparent;
-  border-left: 527px solid rgb(168, 168, 168);
-
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.cover_bottom {
-  position: absolute;
-  border-top: 491px solid transparent;
-  border-right: 441px solid rgb(173, 173, 173);
-  bottom: 0;
-  right: 0;
+#info {
+  background: rgb(56, 144, 164);
+  background: linear-gradient(
+    315deg,
+    rgba(56, 144, 164, 0.11808473389355745) 0%,
+    rgba(83, 155, 189, 0) 48%,
+    rgba(124, 173, 227, 0.19371498599439774) 100%
+  );
 }
 .info_cover {
   width: 70%;
   margin: auto;
 }
 .info_cover h1 {
-  margin-top: 80px;
+  padding-top: 120px;
 }
 .info {
   display: flex;
@@ -204,7 +232,7 @@ img {
 }
 
 .info img {
-  width: 40%;
+  width: 50%;
   margin-right: 30px;
   border-radius: 15px;
 }
@@ -215,19 +243,25 @@ img {
   display: block;
   margin: 20px 0;
 }
-
+#skill {
+  width: 70%;
+  margin: auto;
+}
 .skill_cover {
   width: 100%;
   margin: auto;
   padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.skill_cover h1 {
+h1 {
   padding: 80px 0;
 }
 .skill_important {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 .skill_cover img {
   background-size: contain;
@@ -236,17 +270,16 @@ img {
 .skill_box_cover_2,
 .skill_box_cover_3 {
   display: flex;
-
-  gap: 50px;
+  margin-bottom: 90px;
+  gap: 70px;
 }
 .skill_box_cover_1 {
-  width: 70%;
   margin-bottom: 70px;
+  width: 70%;
 }
 .skill_box_cover_2 {
   margin-top: 19px;
-
-  width: 50%;
+  width: 70%;
 }
 
 .skill_box {
@@ -267,50 +300,90 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.section_1 {
-  width: 70%;
+h2 {
+  margin-bottom: 40px;
+}
+.section_1,
+.section_2 {
+  width: 60%;
   margin: auto;
   margin-bottom: 150px;
+  position: relative;
 }
 .site_cover {
-  display: flex;
 }
-.mockup {
-  width: 60%;
-  display: flex;
+.section_1 .mockup {
+  position: absolute;
+  width: 50%;
   align-items: center;
-  margin-right: 30px;
+  bottom: -94px;
+  left: -140px;
+}
+.section_2 .mockup {
+  position: absolute;
+  width: 34%;
+  align-items: center;
+  bottom: -47px;
+  left: -99px;
 }
 
 .pj_img {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 1px 1px 3px 1px #dadce0;
+  border: 3px solid rgb(188, 188, 188);
 }
 .Ex {
   margin-left: 50px;
 }
 .cover_back {
-  background-color: rgb(129, 129, 129);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    315deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(103, 102, 102, 0.6965161064425771) 0%,
+    rgba(97, 97, 97, 1) 100%
+  );
+}
+.cover_back h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgb(56, 56, 56);
 }
 .sub_pj_cover {
   padding: 50px 0;
   width: 70%;
   margin: auto;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
+  padding-left: 62px;
 }
 .sub_pj {
   width: 40%;
+
+  padding: 42px;
 }
 .sub_pj a {
+  width: 100%;
 }
 .sub_pj img {
   width: 100%;
+  border-radius: 4px;
+  border: 4px solid rgb(255, 201, 201);
+}
+.sub_pj p {
+  color: white;
+  margin-top: 50px;
 }
 
 .sub_pj {
-  background-color: antiquewhite;
+  background: rgb(165, 153, 137);
+  background: linear-gradient(
+    315deg,
+    rgba(165, 153, 137, 0.5998774509803921) 0%,
+    rgba(224, 206, 183, 0.7931547619047619) 48%,
+    rgba(165, 153, 137, 0.6166841736694677) 100%
+  );
   border-radius: 10px;
   margin: 45px;
   transition: 0.5s;
@@ -319,3 +392,6 @@ img {
   transform: translateY(-5px);
   box-shadow: 5px 20px 80px rgb(182, 182, 169);
 }
+
+/*
+슬라이드*/
