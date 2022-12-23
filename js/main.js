@@ -282,20 +282,60 @@ for (aa of info_button) {
 
 //높이값 높이값을 받아오지못해서 마무리하지못했습니다!!!!!!!!!!!!!!!!!!!!!!!!!!!!높이값이 왜 20이나오는지 모르겠어요!!!
 const title_top = document.getElementById("title").offsetTop;
-const info_top = document.getElementById("info").getBoundingClientRect().top;
+const title_bt = document.getElementById("start").offsetTop;
+
+const info_top = document.getElementById("info").offsetTop;
+const info_bt = document.getElementById("info_bt").offsetTop;
+
 const skill_top = document.getElementById("skill").offsetTop;
+const skill_bt = document.getElementById("skill_bt").offsetTop;
+
 const pj_top = document.getElementById("pro").offsetTop;
+const pj_bt = document.getElementById("pro_bt").offsetTop;
+
 const sub_top = document.getElementById("sub").offsetTop;
-const title_bt = document.querySelector(".start").getBoundingClientRect().top;
-console.log("값", title_bt);
+
+const light = document.querySelectorAll(".light");
 window.addEventListener("scroll", function () {
   console.log(window.scrollY);
+  if (window.scrollY >= title_top && window.scrollY < title_bt) {
+    console.log("AA");
+    for (aa of info_button) {
+      aa.parentNode.classList.remove("plus");
 
-  if (window.scrollY > title_top && window.scrollY < title_bt) {
+      light[0].classList.add("plus");
+    }
+  } else if (window.scrollY > info_top && window.scrollY < info_bt) {
+    console.log("AA");
+    for (aa of info_button) {
+      aa.parentNode.classList.remove("plus");
+
+      light[1].classList.add("plus");
+      console.log("dsad", light);
+    }
+  } else if (window.scrollY > skill_top && window.scrollY < skill_bt) {
+    console.log("AA");
+    for (aa of info_button) {
+      aa.parentNode.classList.remove("plus");
+
+      light[2].classList.add("plus");
+      console.log("dsad", light);
+    }
+  } else if (window.scrollY > pj_top && window.scrollY < pj_bt) {
+    for (aa of info_button) {
+      aa.parentNode.classList.remove("plus");
+
+      light[3].classList.add("plus");
+      console.log("dsad", light);
+    }
+  } else if (window.scrollY > sub_top) {
+    for (aa of info_button) {
+      aa.parentNode.classList.remove("plus");
+    }
+    light[4].classList.add("plus");
+    console.log("sub값", sub_top);
   }
 });
-const topy = info_top.getBoundingClientRect;
-console.log(window.scrollY);
 
 //날짜
 function clock() {

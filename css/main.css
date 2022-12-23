@@ -190,21 +190,25 @@ img {
   flex-direction: column;
   margin-top: 10px;
 }
+.sec_remot li span {
+  color: white;
+  text-shadow: 2px 2px 5px rgb(151, 151, 151);
+}
 .sec_remot li img {
   width: 50px;
 }
 .sec_remot a {
   text-align: start;
+  display: flex;
+  flex-direction: column;
 }
 .m_info {
-  color: white;
-  text-shadow: 2px 2px 5px rgb(151, 151, 151);
 }
-.m_info::before {
+.m_info span::before {
   color: black;
   content: "○";
 }
-.plus .m_info::before {
+.plus .m_info span::before {
   color: rgb(84, 172, 255);
   content: "●";
 }
@@ -216,6 +220,9 @@ img {
     rgba(83, 155, 189, 0) 48%,
     rgba(124, 173, 227, 0.19371498599439774) 100%
   );
+}
+.img_cover {
+  width: 100%;
 }
 .info_cover {
   width: 70%;
@@ -232,7 +239,6 @@ img {
 }
 
 .info img {
-  width: 50%;
   margin-right: 30px;
   border-radius: 15px;
 }
