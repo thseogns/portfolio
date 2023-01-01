@@ -1,3 +1,5 @@
+/** @format */
+
 //클릭시 배경이 바뀜
 const win_btn = document.querySelector(".start a img ");
 
@@ -221,7 +223,7 @@ const $text = document.querySelector(".text");
 //타이핑
 
 // 글자 모음
-const letters = ['"PORTFOLIO"', '"HTML"', '"CSS"', '"JavaScript"'];
+const letters = ['"PORTFOLIO"', '"HTML"', '"CSS"', '"JavaScript"', '"React"'];
 
 // 글자 입력 속도
 const speed = 70;
@@ -296,22 +298,21 @@ const pj_bt = document.getElementById("pro_bt").offsetTop;
 const sub_top = document.getElementById("sub").offsetTop;
 
 const light = document.querySelectorAll(".light");
+
+console.log("타이틀 탑값", sub_top);
 window.addEventListener("scroll", function () {
   console.log(window.scrollY);
   if (window.scrollY >= title_top && window.scrollY < title_bt) {
-    console.log("AA");
     for (aa of info_button) {
       aa.parentNode.classList.remove("plus");
 
       light[0].classList.add("plus");
     }
   } else if (window.scrollY > info_top && window.scrollY < info_bt) {
-    console.log("AA");
     for (aa of info_button) {
       aa.parentNode.classList.remove("plus");
 
       light[1].classList.add("plus");
-      console.log("dsad", light);
     }
   } else if (window.scrollY > skill_top && window.scrollY < skill_bt) {
     console.log("AA");
@@ -319,21 +320,18 @@ window.addEventListener("scroll", function () {
       aa.parentNode.classList.remove("plus");
 
       light[2].classList.add("plus");
-      console.log("dsad", light);
     }
   } else if (window.scrollY > pj_top && window.scrollY < pj_bt) {
     for (aa of info_button) {
       aa.parentNode.classList.remove("plus");
 
       light[3].classList.add("plus");
-      console.log("dsad", light);
     }
   } else if (window.scrollY > sub_top) {
     for (aa of info_button) {
       aa.parentNode.classList.remove("plus");
     }
     light[4].classList.add("plus");
-    console.log("sub값", sub_top);
   }
 });
 
@@ -344,7 +342,12 @@ function clock() {
   let year = today.getFullYear(); // 년도
   let month = today.getMonth() + 1; // 월
   let date = today.getDate(); // 날짜
-
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (date < 10) {
+    date = "0" + date;
+  }
   let data = year + "-" + month + "-" + date;
 
   document.getElementById("data").innerHTML = data;
@@ -374,3 +377,34 @@ function clock() {
 setInterval(clock, 1000);
 
 //슬라이드
+let section = document.getElementById("section").offsetWidth;
+function pf_width() {
+  window.addEventListener("resize", () => {
+    section = document.getElementById("section").offsetWidth;
+
+    // window resize시 처리
+    return section;
+  });
+}
+pf_width();
+console.log("width", section);
+const l_btn = document.querySelector(".btn_left");
+const r_btn = document.querySelector(".btn_right");
+const slide = document.querySelector(".slide");
+let addSlide = 0;
+r_btn.addEventListener("click", (e) => {
+  if (addSlide === 0) {
+    addSlide += section;
+    slide.style.left = -addSlide + "px";
+
+    console.log("클릭됨 section값", addSlide);
+  }
+});
+
+l_btn.addEventListener("click", (e) => {
+  if (addSlide >= section) {
+    addSlide -= section;
+    slide.style.left = addSlide + "px";
+    console.log("클릭됨 section값", addSlide);
+  }
+});

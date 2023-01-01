@@ -97,7 +97,14 @@
 
 /*
 타이핑*/
-.title_wrap #text {
+#text1 {
+  position: absolute;
+  top: calc(45% - 20px);
+  left: calc(50% - 213.475px);
+  font-size: 60px;
+}
+.title_wrap #text,
+#text1 {
   color: white;
   display: flex;
   justify-content: center;
@@ -109,6 +116,8 @@
 .title_wrap #text {
   font-size: 2.2rem;
   margin-left: 0.6rem;
+  color: black;
+  text-shadow: 2px 2px 5px rgb(219, 219, 219);
 }
 
 .title_wrap #text ::after {
@@ -213,12 +222,14 @@ img {
   content: "●";
 }
 #info {
-  background: rgb(56, 144, 164);
+  color: rgb(36, 36, 36);
+
+  background: rgb(209, 231, 255);
   background: linear-gradient(
-    315deg,
-    rgba(56, 144, 164, 0.11808473389355745) 0%,
-    rgba(83, 155, 189, 0) 48%,
-    rgba(124, 173, 227, 0.19371498599439774) 100%
+    90deg,
+    rgba(209, 231, 255, 0.3981967787114846) 0%,
+    rgba(190, 255, 190, 0.17690826330532217) 57%,
+    rgba(153, 255, 164, 0.2189250700280112) 100%
   );
 }
 .img_cover {
@@ -230,6 +241,9 @@ img {
 }
 .info_cover h1 {
   padding-top: 120px;
+}
+.info_box {
+  margin-left: 60px;
 }
 .info {
   display: flex;
@@ -296,9 +310,20 @@ h1 {
   margin-top: 60px;
 }
 /*section_1*/
+.project {
+  overflow: hidden;
+  padding-bottom: 150px;
+  background: rgb(178, 199, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(178, 199, 255, 0.4290091036414566) 0%,
+    rgba(120, 157, 255, 0.17690826330532217) 52%,
+    rgba(88, 142, 255, 0.2189250700280112) 100%
+  );
+}
 .p_title:nth-of-type(1) {
   text-align: center;
-  margin-top: 120px;
+  padding-top: 120px;
   margin-bottom: 50px;
 }
 .p_title:nth-of-type(2) {
@@ -309,38 +334,70 @@ h1 {
 h2 {
   margin-bottom: 40px;
 }
-.section_1,
-.section_2 {
+.slide_cover {
   width: 60%;
   margin: auto;
-  margin-bottom: 150px;
+  overflow: hidden;
+}
+.slide {
+  width: 125vw;
+  position: relative;
+  left: 0;
+  display: flex;
+  transition: 1s;
+}
+.section_1,
+.section_2 {
+  width: 100%;
+
   position: relative;
 }
 .site_cover {
+}
+.section_1 {
+  margin-bottom: 150px;
 }
 .section_1 .mockup {
   position: absolute;
   width: 50%;
   align-items: center;
   bottom: -94px;
-  left: -140px;
+  left: 0px;
 }
 .section_2 .mockup {
   position: absolute;
   width: 34%;
   align-items: center;
-  bottom: -47px;
-  left: -99px;
+  bottom: 95px;
+  left: -80px;
 }
 
 .pj_img {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 1px 1px 3px 1px #dadce0;
-  border: 3px solid rgb(188, 188, 188);
+  box-shadow: 0px 1px 15px 3px #abbaff;
 }
 .Ex {
   margin-left: 50px;
+}
+/*슬라이드*/
+
+.slide_wrap {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+.slide_box {
+  width: 100%;
+  margin: auto;
+  overflow-x: hidden;
+}
+.slide_content {
+  display: table;
+  float: left;
+  width: 100%;
+  height: 100%;
 }
 .cover_back {
   background: rgb(2, 0, 36);
