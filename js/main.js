@@ -67,15 +67,36 @@ let count = 0;
 //마우스가 들어가면 게이지 참
 const skill_box = document.querySelectorAll(".skill_box");
 const gage = document.querySelectorAll(".gage");
-let num_count = 0;
+//카운트 업 함수
+
 for (sk of skill_box) {
   sk.addEventListener("mouseenter", function (e) {
-    console.log(
-      "위치:",
-      e.toElement.lastElementChild.lastElementChild.lastElementChild
-    );
-    // console.log("스위치", e.path[0].classList[1]);
-    //카운트업
+    let max = 0;
+    const counterValue = (value) => {
+      switch (value) {
+        case "A":
+          max = 86;
+          break;
+        case "B":
+          max = 88;
+          break;
+        case "C":
+          max = 66;
+          break;
+        case "D":
+          max = 50;
+          break;
+        case "E":
+          max = 80;
+          break;
+        case "F":
+          max = 77;
+          break;
+        case "G":
+          max = 82;
+          break;
+      }
+    };
 
     const counter = (max) => {
       let now = max;
@@ -96,125 +117,150 @@ for (sk of skill_box) {
         now -= step;
       }, 50);
     };
+    const location = e.toElement.lastElementChild;
+    const lValue = e.target.classList[1];
 
-    const aa =
-      e.toElement.lastElementChild.lastElementChild.lastElementChild.innerHTML;
-    switch (e.path[0].classList[1]) {
-      case "A":
-        e.toElement.lastElementChild.classList.add("HTML");
-        max = 86;
-        console.log(aa);
-        if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
-        }
-
-        break;
-      case "B":
-        e.toElement.lastElementChild.classList.add("JS");
-        max = 88;
-        if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
-        }
-
-        break;
-      case "C":
-        console.log(e.toElement.lastElementChild.classList);
-        e.toElement.lastElementChild.classList.add("CSS");
-        max = 66;
-        if (aa === "0") {
-          if (aa === "0") {
-            setTimeout(() => counter(max), 100);
-          }
-        }
-
-        break;
-      case "D":
-        e.toElement.lastElementChild.classList.add("REACT");
-        max = 50;
-        if (aa === "0") {
-          setTimeout(() => counter(max), 100);
-        }
-
-        break;
-      case "E":
-        e.toElement.lastElementChild.classList.add("SASS");
-        max = 80;
-        if (aa === "0") {
-          setTimeout(() => counter(max), 100);
-        }
-
-        break;
-      case "F":
-        e.toElement.lastElementChild.classList.add("JQUERY");
-        max = 77;
-        if (aa === "0") {
-          setTimeout(() => counter(max), 100);
-        }
-
-        break;
-      case "G":
-        e.toElement.lastElementChild.classList.add("BOOTSTRAP");
-        max = 82;
-        if (aa === "0") {
-          setTimeout(() => counter(max), 100);
-        }
-
-        break;
-    }
+    location.classList.add(`v_${lValue}`);
+    counterValue(lValue);
+    setTimeout(() => counter(max), 100);
   });
-  //마우스가 나오면 게이지 줄어듦
-  // sk.addEventListener("mouseleave", function (e) {
-  //   //카운트 다운
-  //   console.log(e.toElement.lastElementChild.lastElementChild.lastElementChild);
-  //   const counter = (max) => {
-  //     let now = max;
-
-  //     const handle = setInterval(() => {
-  //       e.toElement.lastElementChild.lastElementChild.lastElementChild.innerHTML =
-  //         Math.ceil(max - now);
-
-  //       // 목표수치에 도달하면 정지
-  //       if (now < 1) {
-  //         clearInterval(handle);
-  //       }
-
-  //       // 증가되는 값이 계속하여 작아짐
-  //       const step = now / 10;
-
-  //       // 값을 적용시키면서 다음 차례에 영향을 끼침
-  //       now -= step;
-  //     }, 50);
-  //   };
-  //   switch (e.path[0].classList[1]) {
-  //     case "A":
-  //       e.path[0].lastElementChild.classList.remove("HTML");
-
-  //       break;
-  //     case "B":
-  //       e.path[0].lastElementChild.classList.remove("JS");
-  //       break;
-  //     case "C":
-  //       e.path[0].lastElementChild.classList.remove("CSS");
-  //       break;
-  //     case "D":
-  //       e.path[0].lastElementChild.classList.remove("REACT");
-  //       break;
-  //     case "E":
-  //       e.path[0].lastElementChild.classList.remove("SASS");
-  //       break;
-  //     case "F":
-  //       e.path[0].lastElementChild.classList.remove("JQUERY");
-  //       break;
-  //     case "G":
-  //       e.path[0].lastElementChild.classList.remove("BOOTSTRAP");
-  //       break;
-  //   }
-  // });
 }
+
+let num_count = 0;
+// for (sk of skill_box) {
+//   sk.addEventListener("mouseenter", function (e) {
+//     console.log("올라감");
+//     for (sk of skill_box) {
+//       sk.addEventListener("mouseenter", function (e) {
+//         console.log(
+//           "위치:",
+//           e.toElement.lastElementChild.lastElementChild.lastElementChild
+//         );
+//         console.log("이게 뭐드라", e.path[0].classList[1]);
+
+//         // console.log("스위치", e.path[0].classList[1]);
+//
+//         const aa =
+//           e.toElement.lastElementChild.lastElementChild.lastElementChild
+//             .innerHTML;
+//         switch (e.path[0].classList[1]) {
+//           case "A":
+//             e.toElement.lastElementChild.classList.add("HTML");
+
+//             max = 86;
+//             console.log(aa);
+
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "B":
+//             e.toElement.lastElementChild.classList.add("JS");
+//             max = 88;
+
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "C":
+//             console.log(e.toElement.lastElementChild.classList);
+//             e.toElement.lastElementChild.classList.add("CSS");
+//             max = 66;
+
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "D":
+//             e.toElement.lastElementChild.classList.add("REACT");
+//             max = 50;
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "E":
+//             e.toElement.lastElementChild.classList.add("SASS");
+//             max = 80;
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "F":
+//             e.toElement.lastElementChild.classList.add("JQUERY");
+//             max = 77;
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//           case "G":
+//             e.toElement.lastElementChild.classList.add("BOOTSTRAP");
+//             max = 82;
+//             if (aa === "0") {
+//               setTimeout(() => counter(max), 100);
+//             }
+
+//             break;
+//         }
+//       });
+//     }
+//   });
+// }
+
+//   //마우스가 나오면 게이지 줄어듦
+//   // sk.addEventListener("mouseleave", function (e) {
+//   //   //카운트 다운
+//   //   console.log(e.toElement.lastElementChild.lastElementChild.lastElementChild);
+//   //   const counter = (max) => {
+//   //     let now = max;
+
+//   //     const handle = setInterval(() => {
+//   //       e.toElement.lastElementChild.lastElementChild.lastElementChild.innerHTML =
+//   //         Math.ceil(max - now);
+
+//   //       // 목표수치에 도달하면 정지
+//   //       if (now < 1) {
+//   //         clearInterval(handle);
+//   //       }
+
+//   //       // 증가되는 값이 계속하여 작아짐
+//   //       const step = now / 10;
+
+//   //       // 값을 적용시키면서 다음 차례에 영향을 끼침
+//   //       now -= step;
+//   //     }, 50);
+//   //   };
+//   //   switch (e.path[0].classList[1]) {
+//   //     case "A":
+//   //       e.path[0].lastElementChild.classList.remove("HTML");
+
+//   //       break;
+//   //     case "B":
+//   //       e.path[0].lastElementChild.classList.remove("JS");
+//   //       break;
+//   //     case "C":
+//   //       e.path[0].lastElementChild.classList.remove("CSS");
+//   //       break;
+//   //     case "D":
+//   //       e.path[0].lastElementChild.classList.remove("REACT");
+//   //       break;
+//   //     case "E":
+//   //       e.path[0].lastElementChild.classList.remove("SASS");
+//   //       break;
+//   //     case "F":
+//   //       e.path[0].lastElementChild.classList.remove("JQUERY");
+//   //       break;
+//   //     case "G":
+//   //       e.path[0].lastElementChild.classList.remove("BOOTSTRAP");
+//   //       break;
+//   //   }
+//   // });
+// }
 
 //스크롤 받기
 
@@ -393,6 +439,7 @@ const r_btn = document.querySelector(".btn_right");
 const slide = document.querySelector(".slide");
 let addSlide = 0;
 r_btn.addEventListener("click", (e) => {
+  console.log("클릭");
   if (addSlide === 0) {
     addSlide += section;
     slide.style.left = -addSlide + "px";

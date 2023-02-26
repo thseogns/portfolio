@@ -335,6 +335,7 @@ h2 {
   margin-bottom: 40px;
 }
 .slide_cover {
+  position: relative;
   width: 60%;
   margin: auto;
   overflow: hidden;
@@ -456,5 +457,25 @@ h2 {
   box-shadow: 5px 20px 80px rgb(182, 182, 169);
 }
 
+.btn_left,
+.btn_right {
+  font-size: 120px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: calc(50% - 75px);
+  cursor: pointer;
+
+  z-index: 99;
+}
+.slideP {
+  position: relative;
+}
+.btn_right {
+  right: 120px;
+}
+.btn_left {
+  left: 120px;
+}
 /*
 슬라이드*/
