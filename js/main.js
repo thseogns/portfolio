@@ -438,11 +438,15 @@ const l_btn = document.querySelector(".btn_left");
 const r_btn = document.querySelector(".btn_right");
 const slide = document.querySelector(".slide");
 let addSlide = 0;
+
 r_btn.addEventListener("click", (e) => {
+  const aa = 2 * section;
   console.log("클릭");
-  if (addSlide === 0) {
+
+  if (addSlide === 0 || addSlide < aa) {
     addSlide += section;
-    slide.style.left = -addSlide + "px";
+    let add = -addSlide + "px";
+    slide.style.left = add;
 
     console.log("클릭됨 section값", addSlide);
   }
@@ -451,7 +455,8 @@ r_btn.addEventListener("click", (e) => {
 l_btn.addEventListener("click", (e) => {
   if (addSlide >= section) {
     addSlide -= section;
-    slide.style.left = addSlide + "px";
+    let min = -addSlide + "px";
+    slide.style.left = min;
     console.log("클릭됨 section값", addSlide);
   }
 });
