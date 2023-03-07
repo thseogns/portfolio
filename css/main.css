@@ -341,16 +341,18 @@ h2 {
   overflow: hidden;
 }
 .slide {
-  width: 177vw;
+  width: 179vw;
   position: relative;
   left: 0;
   display: flex;
   transition: 1s;
+  margin: 0 40px;
 }
 .section_1,
-.section_2 {
+.section_2,
+.section_3 {
   width: 100%;
-
+  margin-right: 70px;
   position: relative;
 }
 .site_cover {
@@ -363,16 +365,18 @@ h2 {
   width: 50%;
   align-items: center;
   bottom: -94px;
-  left: 0px;
+  left: -40px;
 }
 .section_2 .mockup {
   position: absolute;
   width: 34%;
   align-items: center;
   bottom: 95px;
-  left: -80px;
+  left: 10px;
 }
-
+.section_3 .pj_img {
+  margin-top: 90px;
+}
 .pj_img {
   border-radius: 15px;
   overflow: hidden;

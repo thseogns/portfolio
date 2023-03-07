@@ -84,7 +84,7 @@ for (sk of skill_box) {
           max = 66;
           break;
         case "D":
-          max = 50;
+          max = 69;
           break;
         case "E":
           max = 80;
@@ -424,15 +424,13 @@ setInterval(clock, 1000);
 
 //슬라이드
 let section = document.getElementById("section").offsetWidth;
-function pf_width() {
-  window.addEventListener("resize", () => {
-    section = document.getElementById("section").offsetWidth;
 
-    // window resize시 처리
-    return section;
-  });
-}
-pf_width();
+window.addEventListener("resize", () => {
+  section = document.getElementById("section").offsetWidth;
+
+  // window resize시 처리
+});
+
 console.log("width", section);
 const l_btn = document.querySelector(".btn_left");
 const r_btn = document.querySelector(".btn_right");
@@ -440,10 +438,10 @@ const slide = document.querySelector(".slide");
 let addSlide = 0;
 
 r_btn.addEventListener("click", (e) => {
-  const aa = 2 * section;
+  const limited = 2 * section;
   console.log("클릭");
 
-  if (addSlide === 0 || addSlide < aa) {
+  if (addSlide === 0 || addSlide < limited) {
     addSlide += section;
     let add = -addSlide + "px";
     slide.style.left = add;
