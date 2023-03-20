@@ -438,7 +438,7 @@ const slide = document.querySelector(".slide");
 let addSlide = 0;
 
 r_btn.addEventListener("click", (e) => {
-  const limited = 2 * section;
+  const limited = 3 * section;
   console.log("클릭");
 
   if (addSlide === 0 || addSlide < limited) {
